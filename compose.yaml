@@ -9,7 +9,7 @@ services:
     container_name: servidor_laravel_test
     ports:
       - "127.0.0.1:8081:80"
-      - "127.0.0.1:5172:5172"
+      - "127.0.0.1:5172:5173"
     volumes:
       - ./www:/var/www/html
     depends_on:

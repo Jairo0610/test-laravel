@@ -11,10 +11,15 @@ export default defineConfig({
         tailwindcss(),
     ],
     server: {
-        host: '0.0.0.0',
-        port: 5173,
-        strictPort: true,
-        hmr: { host: 'localhost' },
-        watch: { usePolling: true },
+    host: '0.0.0.0',
+    port: 5173,                 // puerto interno, no cambia
+    strictPort: true,
+    cors: true,
+    origin: 'http://localhost:5174',   // puerto publicado en el host
+    hmr: {
+        host: 'localhost',
+        clientPort: 5172,       // puerto publicado en el host
     },
+    watch: { usePolling: true },
+},
 });
