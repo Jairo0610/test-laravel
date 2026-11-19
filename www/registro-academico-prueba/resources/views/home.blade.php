@@ -1,18 +1,27 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Laravel 12</title>
-    @vite(['resources/css/app.css', 'resources/js/app.js'])
-</head>
-<body>
+@extends('layouts/app')
+
+@section('title', 'Laravel 12')
+
+@push('css')
+    <style>
+        body{
+            background-color: rgb(245, 247, 249);
+        }
+    </style>
+@endpush
+
+@section('content')
     <div class="max-w-4xl mx-auto px-4">
-        <h1 class="text-2xl font-bold my-6">Bienvenido Al Blog</h1>
+        <h1 class="text-2xl font-bold my-6">Bienvenido al Blog</h1>
 
-        <x-alert>
+        <x-alert2 type="info" class="mb-4">
+            <x-slot name="title">
+                Título de la alerta
+            </x-slot>
+            Contenido de la arlerta.
+        </x-alert2>
 
-        </x-alert>
+        <p>Hola Mundo</p>
     </div>
-</body>
-</html>
+@endsection
+    
